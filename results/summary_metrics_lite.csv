@@ -1,0 +1,37 @@
+graph,stage,n,edges,sccCount,topoLength,criticalPathLen,avgPathLen,timeMillis,density,speedPerEdge,notes
+small_1_cycle.json,SCC,6,5,4,,,,0.8591,0.16666666666666666,0.17182,Tarjan SCC
+small_1_cycle.json,Topo,4,2,4,4,,,1.0641,0.16666666666666666,0.53205,Condensation + Kahn
+small_1_cycle.json,Shortest,4,2,4,4,,2.6666666666666665,1.2602,0.16666666666666666,0.6301,DAG shortest paths
+small_1_cycle.json,Longest,4,2,4,4,6.0,2.6666666666666665,0.4557,0.16666666666666666,0.22785,Critical path
+small_2_dag.json,SCC,8,8,8,,,,0.0181,0.14285714285714285,0.0022625,Tarjan SCC
+small_2_dag.json,Topo,8,8,8,8,,,0.1236,0.14285714285714285,0.01545,Condensation + Kahn
+small_2_dag.json,Shortest,8,8,8,8,,6.75,0.0647,0.14285714285714285,0.0080875,DAG shortest paths
+small_2_dag.json,Longest,8,8,8,8,16.0,7.375,0.0226,0.14285714285714285,0.002825,Critical path
+small_3_two_scc.json,SCC,9,10,6,,,,0.0441,0.1388888888888889,0.00441,Tarjan SCC
+small_3_two_scc.json,Topo,6,5,6,6,,,0.0468,0.16666666666666666,0.00936,Condensation + Kahn
+small_3_two_scc.json,Shortest,6,5,6,6,,5.333333333333333,0.0125,0.16666666666666666,0.0025,DAG shortest paths
+small_3_two_scc.json,Longest,6,5,6,6,10.0,5.333333333333333,0.0195,0.16666666666666666,0.0039,Critical path
+medium_1_scc_chain.json,SCC,15,15,13,,,,0.0257,0.07142857142857142,0.0017133333333333334,Tarjan SCC
+medium_1_scc_chain.json,Topo,13,12,13,13,,,0.0794,0.07692307692307693,0.0066166666666666665,Condensation + Kahn
+medium_1_scc_chain.json,Shortest,13,12,13,13,,12.76923076923077,0.0197,0.07692307692307693,0.0016416666666666665,DAG shortest paths
+medium_1_scc_chain.json,Longest,13,12,13,13,27.0,12.76923076923077,0.0196,0.07692307692307693,0.0016333333333333332,Critical path
+medium_2_mixed.json,SCC,18,19,14,,,,0.0316,0.06209150326797386,0.0016631578947368423,Tarjan SCC
+medium_2_mixed.json,Topo,14,13,14,14,,,0.0703,0.07142857142857142,0.005407692307692308,Condensation + Kahn
+medium_2_mixed.json,Shortest,14,13,14,14,,14.714285714285714,0.0165,0.07142857142857142,0.0012692307692307692,DAG shortest paths
+medium_2_mixed.json,Longest,14,13,14,14,27.0,14.714285714285714,0.018,0.07142857142857142,0.0013846153846153845,Critical path
+medium_3_dense.json,SCC,16,64,16,,,,0.0429,0.26666666666666666,6.703125E-4,Tarjan SCC
+medium_3_dense.json,Topo,16,64,16,16,,,0.2165,0.26666666666666666,0.0033828125,Condensation + Kahn
+medium_3_dense.json,Shortest,16,64,16,16,,2.7777777777777777,0.0201,0.26666666666666666,3.140625E-4,DAG shortest paths
+medium_3_dense.json,Longest,16,64,16,16,5.0,2.7777777777777777,0.0196,0.26666666666666666,3.0625E-4,Critical path
+large_1.json,SCC,25,36,25,,,,0.0439,0.06,0.0012194444444444444,Tarjan SCC
+large_1.json,Topo,25,36,25,25,,,0.3749,0.06,0.01041388888888889,Condensation + Kahn
+large_1.json,Shortest,25,36,25,25,,15.92,0.0261,0.06,7.250000000000001E-4,DAG shortest paths
+large_1.json,Longest,25,36,25,25,70.0,34.0,0.0216,0.06,6.000000000000001E-4,Critical path
+large_2.json,SCC,30,40,2,,,,0.035,0.04597701149425287,8.750000000000001E-4,Tarjan SCC
+large_2.json,Topo,2,0,2,2,,,0.0322,0.0,,Condensation + Kahn
+large_2.json,Shortest,2,0,2,2,,0.0,0.0122,0.0,,DAG shortest paths
+large_2.json,Longest,2,0,2,2,0.0,0.0,0.0121,0.0,,Critical path
+large_3.json,SCC,40,100,1,,,,0.0856,0.0641025641025641,8.56E-4,Tarjan SCC
+large_3.json,Topo,1,0,1,1,,,0.0589,0.0,,Condensation + Kahn
+large_3.json,Shortest,1,0,1,1,,0.0,0.0121,0.0,,DAG shortest paths
+large_3.json,Longest,1,0,1,1,0.0,0.0,0.0162,0.0,,Critical path
