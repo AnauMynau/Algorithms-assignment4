@@ -164,17 +164,28 @@ Shortest показывает нижнюю границу длительност
 Mini example of interpretation
 
 Analysis (student view)
+
 SCC (Tarjan)
   • DFS visits ≈ n, edge scans ≈ m → linear, as in theory.
+  
   • Time for small/medium graphs — sub-milliseconds.
+  
   • Cycle compression immediately simplifies planning (fewer vertices in DAG).
+  
 Topological Sort (Kahn)
+
   • Push/pop ≈ n.
+  
   • Works stably: condensation is always acyclic → valid order.
+  
 DAG Shortest / Longest
+
   • DP by topological order; O(V+E).
+  
   • More relaxations on denser graphs → time increases slightly (still < 1 ms in our data).
+  
   • Longest = critical path (which cannot be delayed).
+  
   • Shortest shows the lower bound of duration for the current structure.
 
 ### Mini example of interpretation
@@ -230,15 +241,20 @@ small_1_cycle.json,Longest,4,2,4,4,6.0,2.6667,0.01,0.1667,0.005,Critical path
 
 Testing (short)
 • Unit tests cover TarjanSCC, KahnTopologicalSort, DAG shortest.
+
 • Small "manual" graphs + edge cases.
+
 • For credit: tests consistently pass locally on JDK 17–25.
 
 
 Author
 
 Student: Inayatulla Noyan
+
 Astana IT University - 2 course: Design & Analysis of Algorithms
+
 Assignment: #4 — Smart City / Smart Campus Scheduling
+
 Date: November 2025
 
 
