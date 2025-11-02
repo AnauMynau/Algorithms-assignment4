@@ -1,23 +1,27 @@
-###Assignment 4 — Smart City / Smart Campus Scheduling
+# 🧠 Assignment 4 — Smart City / Smart Campus Scheduling
 
-Course: Design & Analysis of Algorithms
-Topic: SCC + Topological Sort + Shortest/Longest Paths in DAGs
+**Course:** Design & Analysis of Algorithms  
+**Topic:** SCC + Topological Sort + Shortest/Longest Paths in DAGs  
 
-📌 Summary
+---
 
-This project implements a complete graph-analysis pipeline for scheduling tasks in a smart city/campus scenario:
+## 📌 Summary
 
-SCC detection (Tarjan) → Condensation DAG
+This project implements a **complete graph-analysis pipeline** for scheduling tasks in a smart city/campus scenario:
 
-Topological order (Kahn) over the DAG
+- 🌀 **SCC detection** (Tarjan) → *Condensation DAG*
+- 🔁 **Topological order** (Kahn) over the DAG
+- 🧭 **Shortest & Longest paths** in the DAG (DP over topo order)
+- 📊 **Metrics & CSV export** for analysis
 
-Shortest & Longest paths in the DAG (DP over topo order)
+Everything runs from **Main** and generates a compact report:  
+`results/summary_metrics_lite.csv`
 
-Metrics & CSV export for analysis
+---
 
-Everything runs from Main and generates a compact report: results/summary_metrics_lite.csv.
+## 📁 Project Structure
 
-🗂️ Project Structure
+
 ```
 src/
  └─ main/java/smart/scheduling/
@@ -36,7 +40,7 @@ src/
 data/                                 # 9 JSON datasets (small/medium/large)
 results/                              # summary_metrics_lite.csv (generated)
 ```
-▶️ How to Run
+## ▶️ How to Run
 
 ```
 # Build
@@ -58,8 +62,8 @@ mvn -q exec:java -Dexec.mainClass=smart.scheduling.app.Main -Dexec.args="data/sm
 Output: results/summary_metrics_lite.csv
 
 
-📚 Algorithms Implemented
-1) 🔁 Strongly Connected Components — Tarjan
+## 📚 Algorithms Implemented
+### 1) 🔁 Strongly Connected Components — Tarjan
 
 Discovers SCCs in O(V+E) using index/lowLink and a stack.
 
@@ -67,7 +71,7 @@ Output is used to compress cycles before planning.
 
 Then we build condensation DAG (each SCC → single node).
 
-2) 🧱 Topological Sort — Kahn
+### 2) 🧱 Topological Sort — Kahn
 
 Runs on the condensation DAG (acyclic).
 
@@ -75,7 +79,7 @@ Queue of zero-in-degree nodes; each vertex pushed/popped once.
 
 Complexity O(V+E); ideal for scheduling.
 
-3) 🧭 Paths in DAG — Shortest / Longest
+### 3) 🧭 Paths in DAG — Shortest / Longest
 
 Over the topo order, classic DP:
 
@@ -87,7 +91,7 @@ Complexity O(V+E).
 
 We use edge weights (unweighted → all 1).
 
-📊 Metrics & CSV
+## 📊 Metrics & CSV
 
 Columns (concise):
 ```
@@ -115,11 +119,14 @@ If source can’t reach others (rare for our datasets), averages can be null.
 
 speedPerEdge is null when timeMillis=0 or edges=0.
 
-🧪 Datasets (9 total)
-Category	Nodes (n)	Description	Variants
-🟩 Small	6–10	Simple DAGs / 1–2 cycles	3
-🟨 Medium	10–20	Mixed graphs, several SCCs	3
-🟥 Large	20–50	Performance & timing tests	3
+## 🧾 Datasets (9 total)
+
+| Category | Nodes (n) | Description | Variants |
+|-----------|------------|--------------|-----------|
+| 🟩 **Small** | 6–10 | Simple DAGs / 1–2 cycles | 3 |
+| 🟧 **Medium** | 10–20 | Mixed graphs, several SCCs | 3 |
+| 🟥 **Large** | 20–50 | Performance & timing tests | 3 |
+
 
 Design choices:
 
@@ -170,11 +177,14 @@ DAG Shortest / Longest
   • Longest = critical path (which cannot be delayed).
   • Shortest shows the lower bound of duration for the current structure.
 
-Мини-пример интерпретации
-Graph	n	m	Density	Stage	Result	Time (ms)
-small_1_cycle	6	5	0.17	Longest	criticalPathLen = 6	~0.00
-medium_3_dense	16	64	0.27	Longest	criticalPathLen ≈ 5	~0.02
-large_3	40	100	0.06	Shortest	avgPathLen ≈ 0 (DAG trivial)	~0.03
+### Mini example of interpretation
+
+| Graph          |  n |   m | Density | Stage    | Result                         | Time (ms) |
+| -------------- | -: | --: | ------: | -------- | ------------------------------ | --------: |
+| small_1_cycle  |  6 |   5 |    0.17 | Longest  | `criticalPathLen = 6`          |     ~0.00 |
+| medium_3_dense | 16 |  64 |    0.27 | Longest  | `criticalPathLen ≈ 5`          |     ~0.02 |
+| large_3        | 40 | 100 |    0.06 | Shortest | `avgPathLen ≈ 0` (DAG trivial) |     ~0.03 |
+
 
 
 Conclusion: O(V+E) asymptotic behaviour has been empirically confirmed. Even on large data sets, measurements take only milliseconds.
@@ -230,3 +240,5 @@ Student: Inayatulla Noyan
 Astana IT University - 2 course: Design & Analysis of Algorithms
 Assignment: #4 — Smart City / Smart Campus Scheduling
 Date: November 2025
+
+
