@@ -239,7 +239,8 @@ small_1_cycle.json,Longest,4,2,4,4,6.0,2.6667,0.01,0.1667,0.005,Critical path
 ```
 
 
-Testing (short)
+### Testing (short)
+
 • Unit tests cover TarjanSCC, KahnTopologicalSort, DAG shortest.
 
 • Small "manual" graphs + edge cases.
@@ -247,7 +248,7 @@ Testing (short)
 • For credit: tests consistently pass locally on JDK 17–25.
 
 
-Author
+### Author
 
 Student: Inayatulla Noyan
 
